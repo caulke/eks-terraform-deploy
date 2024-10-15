@@ -20,7 +20,7 @@ variable "cluster_name" {
 
 variable "rolearn" {
   description = "Add admin role to the aws-auth configmap"
-  default     = "arn:aws:iam::992382701316:role/test"
+  default     = "arn:aws:iam::322266404742:role/terraform-create-role"
 }
 
 # ################################################################################
