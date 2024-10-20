@@ -4,7 +4,7 @@ pipeline {
                 choice(name: 'Deployment_Type', choices:['apply','destroy'],description:'The deployment type')
                   }
     environment {
-        EMAIL_TO = 'fusisoft@gmail.com'
+        EMAIL_TO = 'nsuhfabiola@gmail.com'
     }
     stages {
         stage('1.Terraform init') {
@@ -41,11 +41,11 @@ pipeline {
                 }
         stage ('5. Email Notification') {
             steps {
-               mail bcc: 'fusisoft@gmail.com', body: '''Terraform deployment is completed.
+               mail bcc: 'nsuhfabiola@gmail.com', body: '''Terraform deployment is completed.
                Let me know if the changes look okay.
                Thanks,
                Dominion System Technologies,
-              +1 (313) 413-1477''', cc: 'fusisoft@gmail.com', from: '', replyTo: '', subject: 'Terraform Infra deployment completed!!!', to: 'fusisoft@gmail.com'
+              +1 (313) 413-14**''', cc: 'nsuhfabiola@gmail.com,kelvincaulker508@gmail.com', from: '', replyTo: '', subject: 'Terraform Infra deployment completed!!!', to: 'fusisoft@gmail.com'
                           
                }    
           }
