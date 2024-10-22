@@ -10,7 +10,7 @@ pipeline {
         stage('1.Terraform init') {
             steps {
                 echo 'terraform init phase'
-                sh 'terraform init'
+                sh 'terraform init -reconfigure'
             }
         }
         stage('2.Terraform plan') {
