@@ -15,7 +15,7 @@ pipeline {
         }
         stage('2.Terraform plan') {
             steps {
-                echo 'terraform plan phase'
+                echo 'terraform plan -lock=false'
                 sh 'AWS_REGION=us-west-2 terraform plan'
             }
         }
