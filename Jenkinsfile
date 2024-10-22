@@ -10,12 +10,12 @@ pipeline {
         stage('1.Terraform init') {
             steps {
                 echo 'terraform init phase'
-                sh 'terraform init'
+                sh 'terraform init -reconfigure'
             }
         }
         stage('2.Terraform plan') {
             steps {
-                echo 'terraform plan -lock=false'
+                echo 'terraform plan phase'
                 sh 'AWS_REGION=us-west-2 terraform plan'
             }
         }
