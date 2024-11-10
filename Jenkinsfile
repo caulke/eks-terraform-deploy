@@ -16,7 +16,7 @@ pipeline {
         stage('2.Terraform plan') {
             steps {
                 echo 'terraform plan phase'
-                sh 'AWS_REGION=us-west-2 terraform plan'
+                sh 'AWS_REGION=us-east-1 terraform plan'
             }
         }
         stage('3.Manual Approval') {
@@ -34,7 +34,7 @@ pipeline {
         stage('4.Terraform Deploy') {              
             steps { 
                 echo 'Terraform ${params.Deployment_Type} phase'  
-                sh "AWS_REGION=us-west-2 terraform ${params.Deployment_Type} --auto-approve"
+                sh "AWS_REGION=us-east-1 terraform ${params.Deployment_Type} --auto-approve"
                 sh("""scripts/update-kubeconfig.sh""")
                 sh("""scripts/install_helm.sh""") 
                 }
